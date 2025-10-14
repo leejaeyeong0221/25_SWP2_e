@@ -47,7 +47,7 @@ void setup() {
   myservo.writeMicroseconds(_DUTY_NEU);
 
   digitalWrite(PIN_LED, HIGH); // LED OFF (active-low)
-  last_sampling_time = millis(); // 샘플링 타이밍 기준 초기화
+  last_sampling_time = millis(); 
 
   // initialize USS related variables
   dist_prev = _DIST_MIN; // raw distance output from USS (unit: mm)
@@ -88,7 +88,7 @@ void loop() {
   else
     digitalWrite(PIN_LED, HIGH);   // OFF
 
-// ===== 거리→각도→펄스 변환 =====
+
   float angle;
   if (dist_ema <= _DIST_MIN) angle = 0.0;
   else if (dist_ema >= _DIST_MAX) angle = 180.0;
